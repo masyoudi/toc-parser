@@ -1,10 +1,14 @@
 {
   "name": "toc-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate table of contents HTML",
   "main": "./lib/tsc/index.js",
   "types": "./lib/tsc/index.d.ts",
   "browser": "./lib/index.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masyoudi/toc-parser"
+  },
   "scripts": {
     "generate": "tsc -p tsconfig.json",
     "build": "rimraf lib && npm run generate && node ./esbuild.js"
