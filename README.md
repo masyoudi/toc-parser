@@ -37,6 +37,7 @@ let options = {
   }
 }
 let toc = new TOCParser(".content", options);
+toc.render();
 ```
 
 - `".content"` {String} - The selector of HTML content do you want to generate table of contents
