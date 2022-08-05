@@ -48,6 +48,10 @@ toc.render();
 | **target**      | The selector of target to placing table of contents                                                                        |
 | **customClass** | Is an object which can contain the keys `ol`, `li` and `a`<br/>This is useful to customize class on tag `ol`, `li` and `a` |
 
-Before initializing `TOCParser` you can use function `render` or `parse`
-- `render` {Function} - Function to render table of contents to specific target
-- `parse` {Function} - Function to get the HTML string
+<br/>
+Available functions
+
+| Options      | Description                                             |
+| ------------ | ------------------------------------------------------- |
+| **render()** | Function to render table of contents to specific target |
+| **parse()**  | Function to get the HTML string                         |
