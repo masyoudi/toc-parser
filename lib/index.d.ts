@@ -11,6 +11,13 @@ export default class TOCParser {
     options: Options;
     constructor(selector: string, options: Options);
     setAttrs(elements: any, callback: Function): void;
+    /**
+     * Create HTML string
+     */
+    parse(): string;
+    /**
+     * Render HTML string to specific element
+     */
     render(): void;
 }
 export {};

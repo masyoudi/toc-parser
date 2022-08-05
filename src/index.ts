@@ -35,21 +35,25 @@ export default class TOCParser {
     });
   }
 
-  render() {
+  /**
+   * Create HTML string
+   */
+  parse(): string {
     let element = document.querySelector(this.selector);
-    let target = document.querySelector(this.options.target);
     let classes = { ...this.options.customClass };
-    if (!element || !target) {
+    if (!element) {
       throw Error("Invalid selector");
     }
 
     let headers: Array<{ id: string; level: number; title: string }> = [];
     let contents = Array.from(element.childNodes);
     this.setAttrs(contents, (opt: any) => headers.push(opt));
-
+    let setClass = (str: string): string => (str ? `class="${str}"` : "");
     let listItem = (item: any) => {
-      return `<li class="${classes.li}"><a class="${classes.a}" href="#${item.id}">${item.title}</a></li>`;
+      let a = `<a ${setClass(classes.a)} href="#${item.id}">${item.title}</a>`;
+      return `<li ${setClass(classes.li)}>${a}</li>`;
     };
+
     let prev = 1;
     let html = "";
 
@@ -59,12 +63,24 @@ export default class TOCParser {
       } else if (header.level < prev) {
         html += "</ol>".repeat(prev - header.level) + listItem(header);
       } else {
-        html += `<ol class="${classes.ol}">${listItem(header)}`;
+        html += `<ol ${setClass(classes.ol)}>${listItem(header)}`;
       }
 
       prev = header.level;
     });
 
-    target.innerHTML = `<ol class="${classes.ol}">${html}</ol>`;
+    return `<ol ${setClass(classes.ol)}>${html}</ol>`;
+  }
+
+  /**
+   * Render HTML string to specific element
+   */
+  render() {
+    let target = document.querySelector(this.options.target);
+    if (!target) {
+      throw Error("Invalid selector");
+    }
+
+    target.innerHTML = String(this.parse());
   }
 }
