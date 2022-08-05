@@ -41,6 +41,7 @@ let toc = new TOCParser(".content", options);
 
 - `".content"` {String} - The selector of HTML content do you want to generate table of contents
 - `options` {Object} - Is an object which can contains:
+
 Options                     | Description
 --------------------------- | ---------------------------------------------------
 **target**                  | The selector of target to placing table of contents
