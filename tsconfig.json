@@ -16,8 +16,8 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "outDir": "./lib/tsc/",
+    "sourceMap": false,
+    "outDir": "./lib",
     "lib": ["esnext", "dom"]
   },
   "include": ["src/**/*.ts"],
