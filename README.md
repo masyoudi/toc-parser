@@ -34,6 +34,18 @@ Define `data-toc` on your html.
 
 Initialize the `TOCParser`
 
+Using CommonJS
+
+```JS
+const { TOCParser } = require('toc-parser');
+```
+
+Using ES6
+
+```JS
+import TOCParser from 'toc-parser';
+```
+
 ```JS
 let options = {
   target: "#table-of-contents",
