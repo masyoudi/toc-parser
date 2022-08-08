@@ -6,7 +6,7 @@ declare type Options = {
         a: string;
     };
 };
-export default class TOCParser {
+export declare class TOCParser {
     selector: string;
     options: Options;
     constructor(selector: string, options: Options);
@@ -20,4 +20,4 @@ export default class TOCParser {
      */
     render(): void;
 }
-export {};
+export default TOCParser;

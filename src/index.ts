@@ -7,7 +7,7 @@ type Options = {
   };
 };
 
-export default class TOCParser {
+export class TOCParser {
   selector: string;
   options: Options;
 
@@ -84,3 +84,5 @@ export default class TOCParser {
     target.innerHTML = String(this.parse());
   }
 }
+
+export default TOCParser;
