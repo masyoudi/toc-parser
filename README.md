@@ -4,11 +4,18 @@ A package for creating table of contents in HTML using vanilla.js
 <br />
 See [online demo](https://jsfiddle.net/masyoudi/et71wsg4/60/)
 
+## Installation
+
+```
+npm install toc-parser --save
+```
+
 ## Usage
 
 Define `data-toc` on your html.
 
 ```HTML
+<div id="table-of-contents"></div>
 <div class="content">
   <div data-toc="1">Title 1</div>
   <p>Example paragraph</p>
@@ -51,7 +58,7 @@ toc.render();
 <br/>
 Available functions
 
-| Options      | Description                                             |
+| Functions    | Description                                             |
 | ------------ | ------------------------------------------------------- |
 | **render()** | Function to render table of contents to specific target |
 | **parse()**  | Function to get the HTML string                         |
